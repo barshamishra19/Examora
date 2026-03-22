@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+
+# --- Secrets (CRITICAL: Never commit these) ---
+.env
+test_db.py
+test_e2e.py
+# (If test_e2e.py also has login data, keep it ignored)
+
+# --- Databases (Local data only) ---
+*.db
+*.sqlite3
+# This ignores your 'exam_prep.db' file
+exam_prep.db 
+
+# --- Uploads & Temp ---
+uploads/*
+!uploads/.gitkeep
+pip_out.txt
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

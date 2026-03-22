@@ -1,0 +1,32 @@
+# Core
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic[email]
+pydantic-settings
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary
+
+# Auth
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+
+# AI
+google-generativeai
+
+# File parsing
+pymupdf
+pdfplumber
+
+# HTTP / Uploads
+python-multipart
+httpx
+aiofiles
+
+# Testing
+pytest
+pytest-asyncio
