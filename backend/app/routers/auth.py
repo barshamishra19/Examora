@@ -5,17 +5,19 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm  # Added for Swagger compatibility
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.schemas.auth import RegisterRequest, TokenResponse, UserResponse
+from app.schemas.auth import RegisterRequest, TokenResponse, UserResponse, AuthSessionResponse
 from app.services.auth_service import register_user, authenticate_user
+from app.utils.security import create_access_token
 from app.utils.security import get_current_user
 
 router = APIRouter(prefix="/api/auth", tags=["Auth"])
 
 
-@router.post("/register", response_model=UserResponse)
+@router.post("/register", response_model=AuthSessionResponse)
 def register(data: RegisterRequest, db: Session = Depends(get_db)):
     user = register_user(db, data)
-    return user
+    token = create_access_token({"sub": str(user.id), "role": user.role})
+    return {"access_token": token, "token_type": "bearer", "user": user}
 
 
 @router.post("/login", response_model=TokenResponse)

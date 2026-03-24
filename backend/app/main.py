@@ -22,15 +22,13 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS — allow all for MVP
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],  # frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Register routers
 app.include_router(auth.router)
 app.include_router(exams.router)

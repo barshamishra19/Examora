@@ -1,0 +1,437 @@
+import { Subject, Topic } from '@/types/index';
+
+export const jeeMainSubjects: Subject[] = [
+  {
+    id: 'physics',
+    name: 'Physics',
+    description: 'Classical Mechanics, Thermodynamics, Electromagnetism, Modern Physics',
+    priority: 'high',
+    progress: 65,
+    topics: [
+      {
+        id: 'kinematics',
+        name: 'Kinematics',
+        estimatedHours: 8,
+        completed: true,
+        progress: 100,
+        priority: 'high',
+        questionsCount: 45,
+      },
+      {
+        id: 'newton-laws',
+        name: 'Newton\'s Laws of Motion',
+        estimatedHours: 10,
+        completed: true,
+        progress: 100,
+        priority: 'high',
+        questionsCount: 50,
+      },
+      {
+        id: 'work-energy',
+        name: 'Work, Energy & Power',
+        estimatedHours: 8,
+        completed: true,
+        progress: 85,
+        priority: 'high',
+        questionsCount: 42,
+      },
+      {
+        id: 'rotational-motion',
+        name: 'Rotational Motion',
+        estimatedHours: 10,
+        completed: false,
+        progress: 40,
+        priority: 'high',
+        questionsCount: 38,
+      },
+      {
+        id: 'thermodynamics',
+        name: 'Thermodynamics',
+        estimatedHours: 12,
+        completed: false,
+        progress: 30,
+        priority: 'medium',
+        questionsCount: 35,
+      },
+      {
+        id: 'electrostatics',
+        name: 'Electrostatics',
+        estimatedHours: 12,
+        completed: false,
+        progress: 20,
+        priority: 'high',
+        questionsCount: 40,
+      },
+    ],
+  },
+  {
+    id: 'chemistry',
+    name: 'Chemistry',
+    description: 'Organic, Inorganic, and Physical Chemistry fundamentals',
+    priority: 'high',
+    progress: 50,
+    topics: [
+      {
+        id: 'atomic-structure',
+        name: 'Atomic Structure',
+        estimatedHours: 8,
+        completed: true,
+        progress: 100,
+        priority: 'high',
+        questionsCount: 48,
+      },
+      {
+        id: 'periodic-table',
+        name: 'Periodic Table',
+        estimatedHours: 6,
+        completed: true,
+        progress: 90,
+        priority: 'medium',
+        questionsCount: 35,
+      },
+      {
+        id: 'chemical-bonding',
+        name: 'Chemical Bonding',
+        estimatedHours: 10,
+        completed: false,
+        progress: 50,
+        priority: 'high',
+        questionsCount: 42,
+      },
+      {
+        id: 'organic-chemistry',
+        name: 'Organic Chemistry Basics',
+        estimatedHours: 15,
+        completed: false,
+        progress: 20,
+        priority: 'high',
+        questionsCount: 50,
+      },
+    ],
+  },
+  {
+    id: 'mathematics',
+    name: 'Mathematics',
+    description: 'Algebra, Trigonometry, Calculus, and Coordinate Geometry',
+    priority: 'high',
+    progress: 72,
+    topics: [
+      {
+        id: 'algebra',
+        name: 'Algebra',
+        estimatedHours: 12,
+        completed: true,
+        progress: 100,
+        priority: 'high',
+        questionsCount: 55,
+      },
+      {
+        id: 'trigonometry',
+        name: 'Trigonometry',
+        estimatedHours: 10,
+        completed: true,
+        progress: 85,
+        priority: 'high',
+        questionsCount: 48,
+      },
+      {
+        id: 'calculus',
+        name: 'Calculus',
+        estimatedHours: 15,
+        completed: false,
+        progress: 60,
+        priority: 'high',
+        questionsCount: 52,
+      },
+      {
+        id: 'coordinate-geometry',
+        name: 'Coordinate Geometry',
+        estimatedHours: 12,
+        completed: false,
+        progress: 40,
+        priority: 'medium',
+        questionsCount: 45,
+      },
+    ],
+  },
+];
+
+export const bankingSubjects: Subject[] = [
+  {
+    id: 'quantitative-aptitude',
+    name: 'Quantitative Aptitude',
+    description: 'Number System, Percentages, Averages, Ratio, Time & Work',
+    priority: 'high',
+    progress: 75,
+    topics: [
+      {
+        id: 'number-system',
+        name: 'Number System',
+        estimatedHours: 6,
+        completed: true,
+        progress: 100,
+        priority: 'medium',
+        questionsCount: 40,
+      },
+      {
+        id: 'percentages',
+        name: 'Percentages & Profit Loss',
+        estimatedHours: 8,
+        completed: true,
+        progress: 95,
+        priority: 'high',
+        questionsCount: 45,
+      },
+      {
+        id: 'ratio-proportion',
+        name: 'Ratio & Proportion',
+        estimatedHours: 6,
+        completed: false,
+        progress: 70,
+        priority: 'medium',
+        questionsCount: 35,
+      },
+      {
+        id: 'time-work',
+        name: 'Time & Work',
+        estimatedHours: 7,
+        completed: false,
+        progress: 50,
+        priority: 'medium',
+        questionsCount: 30,
+      },
+    ],
+  },
+  {
+    id: 'reasoning',
+    name: 'Reasoning',
+    description: 'Logical, Analytical, and Verbal Reasoning',
+    priority: 'high',
+    progress: 65,
+    topics: [
+      {
+        id: 'analogies',
+        name: 'Analogies & Classification',
+        estimatedHours: 6,
+        completed: true,
+        progress: 100,
+        priority: 'medium',
+        questionsCount: 38,
+      },
+      {
+        id: 'syllogism',
+        name: 'Syllogism',
+        estimatedHours: 8,
+        completed: false,
+        progress: 60,
+        priority: 'high',
+        questionsCount: 42,
+      },
+      {
+        id: 'coding-decoding',
+        name: 'Coding & Decoding',
+        estimatedHours: 6,
+        completed: false,
+        progress: 45,
+        priority: 'medium',
+        questionsCount: 35,
+      },
+    ],
+  },
+  {
+    id: 'english-language',
+    name: 'English Language',
+    description: 'Reading Comprehension, Grammar, Vocabulary',
+    priority: 'medium',
+    progress: 60,
+    topics: [
+      {
+        id: 'reading-comprehension',
+        name: 'Reading Comprehension',
+        estimatedHours: 10,
+        completed: false,
+        progress: 70,
+        priority: 'high',
+        questionsCount: 50,
+      },
+      {
+        id: 'grammar',
+        name: 'Grammar',
+        estimatedHours: 8,
+        completed: false,
+        progress: 55,
+        priority: 'medium',
+        questionsCount: 40,
+      },
+      {
+        id: 'vocabulary',
+        name: 'Vocabulary & Spelling',
+        estimatedHours: 6,
+        completed: false,
+        progress: 50,
+        priority: 'low',
+        questionsCount: 30,
+      },
+    ],
+  },
+  {
+    id: 'general-knowledge',
+    name: 'General Knowledge',
+    description: 'Banking, Current Affairs, Static GK',
+    priority: 'medium',
+    progress: 40,
+    topics: [
+      {
+        id: 'banking-gk',
+        name: 'Banking & Finance GK',
+        estimatedHours: 8,
+        completed: false,
+        progress: 45,
+        priority: 'high',
+        questionsCount: 35,
+      },
+      {
+        id: 'current-affairs',
+        name: 'Current Affairs',
+        estimatedHours: 6,
+        completed: false,
+        progress: 30,
+        priority: 'high',
+        questionsCount: 40,
+      },
+    ],
+  },
+];
+
+export const civilServicesSubjects: Subject[] = [
+  {
+    id: 'indian-polity',
+    name: 'Indian Polity & Constitution',
+    description: 'Constitution, Government Structure, Rights & Duties',
+    priority: 'high',
+    progress: 55,
+    topics: [
+      {
+        id: 'constitution-basics',
+        name: 'Constitution Basics',
+        estimatedHours: 12,
+        completed: true,
+        progress: 100,
+        priority: 'high',
+        questionsCount: 60,
+      },
+      {
+        id: 'union-structure',
+        name: 'Union Government Structure',
+        estimatedHours: 10,
+        completed: false,
+        progress: 50,
+        priority: 'high',
+        questionsCount: 50,
+      },
+      {
+        id: 'fundamental-rights',
+        name: 'Fundamental Rights & Duties',
+        estimatedHours: 10,
+        completed: false,
+        progress: 40,
+        priority: 'high',
+        questionsCount: 45,
+      },
+    ],
+  },
+  {
+    id: 'indian-history',
+    name: 'Indian History',
+    description: 'Ancient, Medieval, Modern India',
+    priority: 'high',
+    progress: 45,
+    topics: [
+      {
+        id: 'ancient-history',
+        name: 'Ancient India',
+        estimatedHours: 15,
+        completed: false,
+        progress: 40,
+        priority: 'high',
+        questionsCount: 65,
+      },
+      {
+        id: 'medieval-history',
+        name: 'Medieval India',
+        estimatedHours: 12,
+        completed: false,
+        progress: 30,
+        priority: 'high',
+        questionsCount: 55,
+      },
+      {
+        id: 'modern-history',
+        name: 'Modern India & Freedom Struggle',
+        estimatedHours: 15,
+        completed: false,
+        progress: 45,
+        priority: 'high',
+        questionsCount: 70,
+      },
+    ],
+  },
+  {
+    id: 'indian-geography',
+    name: 'Indian Geography',
+    description: 'Physical, Human, and Economic Geography',
+    priority: 'medium',
+    progress: 50,
+    topics: [
+      {
+        id: 'physical-geography',
+        name: 'Physical Geography',
+        estimatedHours: 12,
+        completed: false,
+        progress: 50,
+        priority: 'medium',
+        questionsCount: 50,
+      },
+      {
+        id: 'human-geography',
+        name: 'Human & Cultural Geography',
+        estimatedHours: 10,
+        completed: false,
+        progress: 40,
+        priority: 'medium',
+        questionsCount: 45,
+      },
+    ],
+  },
+];
+
+// Export a map of exam ID to subjects for easy lookup
+export const examSubjectsMap: { [key: string]: Subject[] } = {
+  'jee-main': jeeMainSubjects,
+  'jee-advanced': jeeMainSubjects,
+  'bitsat': jeeMainSubjects,
+  'ibps-po': bankingSubjects,
+  'sbi-po': bankingSubjects,
+  'ibps-clerk': bankingSubjects,
+  'upsc-cse': civilServicesSubjects,
+  'state-pcs': civilServicesSubjects,
+  'neet-ug': jeeMainSubjects.slice(0, 2), // Physics and Chemistry
+  'class-12-cbse': jeeMainSubjects,
+};
+
+// Helper function to get subjects for an exam
+export function getSubjectsForExam(examId: string): Subject[] {
+  return examSubjectsMap[examId] || [];
+}
+
+// Helper function to get a specific subject
+export function getSubjectById(examId: string, subjectId: string): Subject | undefined {
+  const subjects = getSubjectsForExam(examId);
+  return subjects.find((subject) => subject.id === subjectId);
+}
+
+// Helper function to get a specific topic
+export function getTopicById(examId: string, subjectId: string, topicId: string): Topic | undefined {
+  const subject = getSubjectById(examId, subjectId);
+  return subject?.topics.find((topic) => topic.id === topicId);
+}

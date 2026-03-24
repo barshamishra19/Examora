@@ -29,3 +29,9 @@ class UserResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class AuthSessionResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    user: UserResponse

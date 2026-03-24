@@ -1,0 +1,436 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Premium Color Palette - Royal & Elegant */
+:root {
+  /* Primary Colors - Warm Amber & Gold */
+  --primary-navy: #5E4327;
+  --primary-navy-light: #7A5A35;
+  --primary-gold: #D4A574;
+  --primary-gold-dark: #C4956F;
+  --primary-cream: #F5F3F0;
+  --primary-cream-light: #FAF8F6;
+  
+  /* Semantic Colors */
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --error: #E63946;
+  --info: #D4A574;
+  
+  /* Backgrounds */
+  --background: #FAF8F6;
+  --background-secondary: #F5F3F0;
+  --surface: #FFFFFF;
+  
+  /* Text */
+  --foreground: #2F2418;
+  --foreground-secondary: #4A5568;
+  --foreground-muted: #718096;
+  
+  /* Borders */
+  --border-light: #E8E6E1;
+  --border-medium: #D4D0C8;
+  
+  /* Cards & UI */
+  --card: #FFFFFF;
+  --card-foreground: #2F2418;
+  
+  /* UI Elements */
+  --input-bg: #FFFFFF;
+  --input-border: #D4D0C8;
+  --input-focus: #D4A574;
+  
+  /* Design Tokens */
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+  
+  /* Legacy shadcn tokens for compatibility */
+  --popover: #FFFFFF;
+  --popover-foreground: #2F2418;
+  --primary: #D4A574;
+  --primary-foreground: #2F2418;
+  --secondary: #D4A574;
+  --secondary-foreground: #2F2418;
+  --muted: #F5F3F0;
+  --muted-foreground: #718096;
+  --accent: #D4A574;
+  --accent-foreground: #2F2418;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --border: #E8E6E1;
+  --input: #FFFFFF;
+  --ring: #D4A574;
+  --chart-1: #C4956F;
+  --chart-2: #D4A574;
+  --chart-3: #4CAF50;
+  --chart-4: #FF9800;
+  --chart-5: #E8C69E;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2F2418;
+  --sidebar-primary: #D4A574;
+  --sidebar-primary-foreground: #2F2418;
+  --sidebar-accent: #D4A574;
+  --sidebar-accent-foreground: #2F2418;
+  --sidebar-border: #E8E6E1;
+  --sidebar-ring: #D4A574;
+}
+
+.dark {
+  /* Dark Mode - Warm Deep Backgrounds */
+  --primary-navy: #2A1D12;
+  --primary-navy-light: #3A2818;
+  --primary-gold: #D4A574;
+  --primary-gold-dark: #C4956F;
+  --primary-cream: #2A2118;
+  --primary-cream-light: #3A2E22;
+  
+  --success: #66BB6A;
+  --warning: #FFA726;
+  --error: #EF5350;
+  --info: #E0B886;
+  
+  --background: #1A120B;
+  --background-secondary: #24180E;
+  --surface: #2A1E12;
+  
+  --foreground: #F8F7F5;
+  --foreground-secondary: #E3D4C1;
+  --foreground-muted: #BFAE97;
+  
+  --border-light: #3A2C1E;
+  --border-medium: #56432F;
+  
+  --card: #24180E;
+  --card-foreground: #F8F7F5;
+  
+  --input-bg: #2A1E12;
+  --input-border: #3A2C1E;
+  --input-focus: #D4A574;
+  
+  --popover: #24180E;
+  --popover-foreground: #F8F7F5;
+  --primary: #D4A574;
+  --primary-foreground: #1A120B;
+  --secondary: #D4A574;
+  --secondary-foreground: #1A120B;
+  --muted: #3A2C1E;
+  --muted-foreground: #BFAE97;
+  --accent: #D4A574;
+  --accent-foreground: #1A120B;
+  --destructive: #EF5350;
+  --destructive-foreground: #1A120B;
+  --border: #3A2C1E;
+  --input: #2A1E12;
+  --ring: #D4A574;
+  --chart-1: #D4A574;
+  --chart-2: #66BB6A;
+  --chart-3: #FFA726;
+  --chart-4: #E0B886;
+  --chart-5: #C4956F;
+  --sidebar: #1E150D;
+  --sidebar-foreground: #F8F7F5;
+  --sidebar-primary: #D4A574;
+  --sidebar-primary-foreground: #1A120B;
+  --sidebar-accent: #3A2C1E;
+  --sidebar-accent-foreground: #E0B886;
+  --sidebar-border: #3A2C1E;
+  --sidebar-ring: #D4A574;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-playfair), 'Playfair Display', serif;
+  --font-heading: var(--font-lora), 'Lora', serif;
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* Custom Brand Colors for Badges and UI */
+  --color-navy: var(--primary-navy);
+  --color-gold: var(--primary-gold);
+  --color-gold-dark: var(--primary-gold-dark);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  /* Input and Form Colors */
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-focus: var(--input-focus);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+  
+  /* Typography Scaling */
+  h1 {
+    @apply text-4xl font-heading font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl font-heading font-bold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl font-heading font-semibold tracking-tight;
+  }
+  
+  h4 {
+    @apply text-xl font-heading font-semibold;
+  }
+  
+  h5, h6 {
+    @apply text-lg font-heading font-semibold;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Focus States */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+  
+  /* Smooth Transitions */
+  button, a, [role="button"] {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  /* Premium Card Component */
+  .card-premium {
+    @apply bg-card border border-border rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* Premium Button */
+  .btn-premium {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 active:scale-95 transition-all duration-200;
+  }
+  
+  /* Badge Component */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-primary {
+    background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+    @apply text-primary;
+  }
+  
+  .badge-gold {
+    background-color: color-mix(in srgb, var(--primary-gold) 10%, transparent);
+    color: var(--primary-gold-dark);
+  }
+  
+  .badge-success {
+    background-color: color-mix(in srgb, var(--success) 10%, transparent);
+    color: var(--success);
+  }
+  
+  /* Input Styles */
+  .input-premium {
+    @apply w-full px-4 py-2 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-200;
+  }
+  
+  /* Container */
+  .container-premium {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-scaleIn {
+  animation: scale-in 0.45s ease-out both;
+}
+
+.motion-reveal {
+  opacity: 0;
+  animation: slideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-float {
+  animation: float-gentle 3.2s ease-in-out infinite;
+}
+
+.motion-card {
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.motion-card:hover {
+  transform: translateY(-4px);
+}
+
+.motion-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 45%, transparent 100%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.motion-cta:hover::after {
+  animation: shimmer-sweep 820ms ease;
+}
+
+.motion-arrow {
+  transition: transform 220ms ease;
+}
+
+.group:hover .motion-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-reveal {
+    opacity: 1;
+  }
+}

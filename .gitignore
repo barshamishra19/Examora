@@ -1,33 +1,87 @@
-# --- Python ---
+# =========================
+# 🐍 Python
+# =========================
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+**/.pytest_cache/
 
-# --- Virtual Environments ---
+# =========================
+# 🧪 Virtual Environments
+# =========================
 venv/
 .venv/
 env/
+backend/venv/
+backend/.venv/
 
-# --- Secrets (CRITICAL: Never commit these) ---
+# =========================
+# 🔐 Secrets (NEVER COMMIT)
+# =========================
 .env
-test_db.py
-test_e2e.py
-# (If test_e2e.py also has login data, keep it ignored)
+.env.local
+backend/.env
+frontend/.env.local
+.env*.local
+# Keep only root .env.example tracked
+backend/.env.example
 
-# --- Databases (Local data only) ---
+# =========================
+# 🗄️ Databases (local only)
+# =========================
 *.db
 *.sqlite3
-# This ignores your 'exam_prep.db' file
-exam_prep.db 
+exam_prep.db
+backend/exam_prep.db
 
-# --- Uploads & Temp ---
-uploads/*
-!uploads/.gitkeep
+# =========================
+# 📂 Uploads & Temp
+# =========================
+backend/uploads/*
+!backend/uploads/.gitkeep
 pip_out.txt
+backend/pip_out.txt
 
-# --- IDE & OS ---
+# =========================
+# ⚛️ Frontend / Node
+# =========================
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+pnpm-lock.yaml
+frontend/pnpm-lock.yaml
+
+# =========================
+# ⚙️ Deployment / Build
+# =========================
+.vercel/
+
+# =========================
+# 🧠 IDE / Editor
+# =========================
 .vscode/
 .idea/
+
+# =========================
+# 💻 OS Files
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# 🧪 Misc / Tooling
+# =========================
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+next.user-config.*
