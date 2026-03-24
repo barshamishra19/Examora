@@ -85,3 +85,6 @@ __v0_jsx-dev-runtime.ts
 .snowflake/
 .v0-trash/
 next.user-config.*
+
+backend/test_db.py
+backend/test_e2e.py
